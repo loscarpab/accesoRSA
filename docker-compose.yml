@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  ssh.server:
+    build: .
+    container_name: ssh-container
+    ports:
+      - "2222:22"
+    restart: always
+    volumes:
+      - /ssh_keys:/home/ubuntu/.ssh
+
+volumes:
+  ssh_keys:
